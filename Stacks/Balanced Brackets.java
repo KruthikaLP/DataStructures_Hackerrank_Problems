@@ -24,10 +24,10 @@ class Result {
     Stack<Character> st = new Stack<>();
     for(char c : s.toCharArray()){
         if(c=='(' || c=='[' || c=='{'){
-            st.add(c);
+            st.push(c);
         }
         else if(st.isEmpty()){
-            return "YES";
+            return "NO";
         }
         else{
             char temp = st.pop();
@@ -36,7 +36,7 @@ class Result {
             }
         }
     }
-    return "YES";
+        return st.isEmpty() ? "YES" : "NO";
 
     }
 
